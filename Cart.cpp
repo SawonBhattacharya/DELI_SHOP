@@ -14,7 +14,7 @@ class Cart {
             
         }
         void add_to_cart() {
-            cart.insert(pair<string, int>("a", 10.7));
+            cart.insert(pair<string, double>("a", 10.7));
         }
         void print_invoice() {
             map<string, double>::iterator itr;
