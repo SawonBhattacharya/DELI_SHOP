@@ -38,7 +38,7 @@ class Scale {
 		}
 };
 
-int main() {
+/*int main() {
 	
 	string productName; 
 	double quantity; 
@@ -72,7 +72,7 @@ int main() {
 	else
 		scale.addWeight(quantity);*/
 	//scale.substractWeight()
-	scale.zeroWeight();
+	/*scale.zeroWeight();
 		
 	return 0;
-}
+}*/

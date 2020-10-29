@@ -51,7 +51,7 @@ class Price_List {
 		
 };
 
-int main() {
+/*int main() {
 	Price_List priceList;
 	// Print the initial price of all the items in the list 
 	cout << "Initial Price List: " << endl;
@@ -72,4 +72,4 @@ int main() {
 	cin >> product; 
 	cout << "The price of " << product << " is: " << priceList.get_price(product) << endl;
 	return 0;
-}
+}*/
