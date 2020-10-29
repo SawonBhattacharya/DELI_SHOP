@@ -38,6 +38,7 @@ class Price_List {
 					return i->second;
 				}
 			}
+			return 0;
 		}
 		
 		// Print price list of all products

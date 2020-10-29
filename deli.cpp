@@ -1,11 +1,11 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 #include<iostream>
-#include <queue>
+#include<queue>
 #include<iterator>
 #include<map>
 #include<string>
-#include"Scale.cpp"
-#include"Price_list.cpp"
+//#include"Scale.cpp"
+//#include"Price_list.cpp"
 #include"Cart.cpp"
 
 using namespace std;
@@ -42,7 +42,7 @@ public:
    }
 };
 int deli::customer_count,deli::customer_id;
- queue <int> deli:: customer;
+queue <int> deli:: customer;
 int main(){
 	
     deli cust[10];

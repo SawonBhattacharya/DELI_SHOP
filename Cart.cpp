@@ -61,11 +61,11 @@ class Cart {
 };
 
 
-int main() {
+/*int main() {
     Cart c;
     c.sel_prod();
     c.add_to_cart();
     c.check_out();
 
     return 0;
-}
+}*/
