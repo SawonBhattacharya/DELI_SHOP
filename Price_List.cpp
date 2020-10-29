@@ -1,73 +1,75 @@
-// C++ program to demonstrate function
-// declaration outside class
+#include<iostream>
+#include<bits/stdc++.h>
+#include<map>
 
-#include <bits/stdc++.h>
-using namespace std;
-class Price_list
-{
-	private:
-	    string prod[6] = {"Roast Beef", "Pastrami", "Salami","Pickles","Black Olives","Green Olives"}; //The string type array
+using namespace std; 
+
+class Price_List {
+	
+	private: 
+		string prod[6] = {"Roast Beef", "Pastrami", "Salami", "Pickles", "Black Olives", "Green Olives"}; //The string type array
 	    int price[6]={10,20,30,54,81,32};
-	    std::vector<std::pair<std::string,int>>pricing;
-	public:
-
-        Price_list(){
-
-            //default pricing
-            for(int i=0;i<6;i++){
-                    pricing.push_back(std::make_pair(prod[i],price[i]));
-            }
-        }
-        //set price (for a specific product)
-        void set_price(string product){
-        //if shopkeeper wants to change the price
-            for(int i=0;i<6;i++){
-                int update_price=0;
-                if(pricing[i].first==product){
-                    cout<<"Update the price of "<<pricing[i].first<<" : "<<endl;
-                    cin>>update_price;
-                    pricing[i].second=update_price;
-                    break;
-                }
-            }
-            cout<<"price has been updated!!!"<<endl;
-        }
-        // get price (for a specific product)
-        int get_price(string product){
-            for(int i = 0; i <6 ; i++){
-                if(product==pricing[i].first)
-                    return pricing[i].second;
-            }
-        }
-        //print price list (including all products)(pair data structure)
-        void print_price(){
-           cout<<"Product\tPricing"<<endl;
-           for(int i = 0; i <6 ; i++){
-                std::cout << pricing[i].first;
-                std::cout<<"\t";
-                std::cout<<pricing[i].second<<endl;
-
-           }
-        }
-
-
+	    map<string, double> pricing; 
+	    
+	public: 
+	
+		// Assignes default values to the map
+		Price_List() {
+			for(int i = 0; i < 6; i++) {
+				pricing.insert(pair<string, double>(prod[i], price[i]));
+			}
+		}
+		
+		// Set price for a specific product
+		void set_price(string product, double updatedPrice) {
+			map<string, double>::iterator i;
+			for(i = pricing.begin(); i != pricing.end(); ++i) {
+				if(product == i->first) {
+					i->second = updatedPrice;
+				}
+			}
+		}
+		
+		// Get price for a specific product 
+		double get_price(string product) {
+			map<string, double>::iterator i;
+			for(i = pricing.begin(); i != pricing.end(); ++i) {
+				if(product == i->first) {
+					return i->second;
+				}
+			}
+		}
+		
+		// Print price list of all products
+		void print_price() {
+			map<string, double>::iterator i;
+			cout<<"Product\tPricing"<<endl;
+			for(i = pricing.begin(); i != pricing.end(); ++i) {
+				cout << i->first << "\t" << i->second << endl;
+			}
+		}
+		
 };
 
-
 int main() {
-
-	Price_list obj1;
-
-
-	// call printname()
-	obj1.print_price();
-	cout << endl;
-
-    obj1.set_price("Pastrami");
-    cout << endl;
-    obj1.print_price();
-	cout << endl;
-    cout<<"Price of Roast Beef is: "<<obj1.get_price("Roast Beef");
-
+	Price_List priceList;
+	// Print the initial price of all the items in the list 
+	cout << "Initial Price List: " << endl;
+	priceList.print_price();
+	// Set price of a particular product in the list 
+	string product; 
+	double price; 
+	cout << "Enter the product name whose price is to be set: "; 
+	cin >> product; 
+	cout << "Enter the price that you want to set of " << product << " : ";
+	cin >> price; 
+	priceList.set_price(product, price);
+	// Print the list after updation
+	cout << "Modified Price List: " << endl; 
+	priceList.print_price();
+	// Get price of a praticular product
+	cout << "Enter the proudct name: ";
+	cin >> product; 
+	cout << "The price of " << product << " is: " << priceList.get_price(product) << endl;
 	return 0;
 }
