@@ -1,10 +1,17 @@
 #include <bits/stdc++.h>
 #include<iostream>
 #include <queue>
+#include<iterator>
+#include<map>
+#include<string>
+#include"Scale.cpp"
+#include"Price_list.cpp"
+#include"Cart.cpp"
 
 using namespace std;
 class deli{
 private:
+    Cart cart;
     static queue <int> customer;
     static int customer_count,customer_id;
 public:
@@ -30,6 +37,9 @@ public:
         customer.pop();
 
     }
+   ~deli(){
+       cout<<"Start of a New Day!!!";
+   }
 };
 int deli::customer_count,deli::customer_id;
  queue <int> deli:: customer;
