@@ -9,7 +9,7 @@
 ********************************************************************************/
 
 #include<iostream>
-#include"Deli.cpp"
+#include<Deli.hpp>
 
 using namespace std;
 

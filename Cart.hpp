@@ -1,3 +1,6 @@
+#ifndef CART_H
+#define CART_H
+
 #include<iostream>
 #include<string>
 #include<map>
@@ -83,3 +86,5 @@ class Cart {
             }
         }
 };
+
+#endif

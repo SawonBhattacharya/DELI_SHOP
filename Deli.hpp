@@ -1,3 +1,6 @@
+#ifndef DELI_H
+#define DELI_H
+
 #include<iostream>
 #include<string>
 #include<map>
@@ -88,3 +91,5 @@ public:
         cout << "Total Revenue for the day: " << revenue.get_tot_rev() << endl;
     }
 };
+
+#endif
