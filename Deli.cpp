@@ -64,7 +64,7 @@ public:
     }
     void check_out_customer() {
         customer.pop();
-        cout << "Thank you customer: "<< customer_id << "! Please visit again!";
+        cout << "Thank you customer: "<< customer_id << "! Please visit again!" << endl;
         customer_id--;
     }
     void report() {
