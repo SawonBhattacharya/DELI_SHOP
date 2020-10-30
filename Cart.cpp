@@ -19,14 +19,15 @@ class Cart {
         Cart() {
             scale.zeroWeight();
             cart.clear();
-            product = "";
         }
         //Select product
         void sel_prod() {
             cout << "Select from the following" <<  endl;
             list.print_price();
             cout << "\nEnter product name: " << endl;
+            cin.ignore();
             getline(cin, product);
+            cout << product << endl;
         }
         //add to cart
         void add_to_cart() {
