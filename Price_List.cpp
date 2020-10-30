@@ -6,7 +6,7 @@ using namespace std;
 class Price_List {
 	
 	private: 
-		string prod[6] = {"Roast Beef", "Pastrami", "Salami\t", "Pickles\t", "Black Olives", "Green Olives"}; //The string type array
+		string prod[6] = {"Roast Beef", "Pastrami", "Salami", "Pickles", "Black Olives", "Green Olives"}; //The string type array
 	    double price[6]={10.00, 20.50, 30.20, 54.80, 81.50, 32.0};
 	    map<string, double> pricing; 
 	    
