@@ -15,7 +15,6 @@ private:
 
 public:
     Deli() {
-        cout << "Starting new day!!!\n" << endl;
         customer_id = 0;
         revenue = Revenue();
     }
@@ -79,5 +78,6 @@ public:
         cout << "Total Revenue for the day: " << revenue.get_tot_rev() << endl;
     }
     ~Deli() {
+        
     }
 };
