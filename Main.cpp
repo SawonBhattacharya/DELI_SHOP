@@ -7,7 +7,10 @@ int main() {
     int choice;
     Deli deli;
     do {
-        cout << "DELI SHOP\n1. New Day\n2. New Customer\n3. Serve Customer\n4. Check Out customer\n5. Report\n6. End Day\n0. EXIT PROGRAM\n\nEnter Choice:" << endl;
+    	cout << "-------------------------" << endl;
+        cout << "|\tDELI SHOP\t|\n|\t1. New Day\t|\n|\t2. New Customer\t|\n|\t3. Serve Customer|\n|\t4. Check Out customer|\n|\t5. Report\t|\n|\t6. End Day\t|\n|\t0. EXIT PROGRAM\t|" << endl;
+        cout << "-------------------------" << endl;
+        cout << "Enter choice: ";
         cin >> choice;
         switch (choice)
         {

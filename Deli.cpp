@@ -15,7 +15,7 @@ private:
 
 public:
     Deli() {
-        cout << "Starting new day!!!" << endl;
+        cout << "Starting new day!!!\n" << endl;
         customer_id = 0;
         revenue = Revenue();
     }
@@ -23,7 +23,7 @@ public:
         if(customer.size() < 10) {
             customer_id = (++customer_id)%11;
             customer.push(customer_id);
-            cout << "Customer Has been added!" << endl;
+            cout << "Customer Has been added!\n" << endl;
             return;
         }
         cout << "Queue Full!" << endl;
@@ -35,6 +35,7 @@ public:
             return;
         }
         cout << "Serving customer: " << customer.front() << endl;
+        cout << "\n";
         Cart cart;
         do {
             cout << "1. Select Product\n2. Add to cart\n3. Print Invoice\n4. Check Out\n\nEnter choice: ";
@@ -64,12 +65,12 @@ public:
     }
     void check_out_customer() {
         customer.pop();
-        cout << "Thank you customer: "<< customer_id;
+        cout << "Thank you customer: "<< customer_id << "! Please visit again!";
         customer_id--;
     }
     void report() {
         cout << "Total Products solded: " << revenue.get_tot_prod() << endl;
-        cout << "Total Revenue per product" << endl;
+        cout << "Total Revenue per product: " << revenue.get_tot_rev() << endl;
         map<string, double> rev = revenue.get_rev_prod();
         map<string, double>::iterator itr;
         for(itr = rev.begin(); itr != rev.end(); ++itr) {

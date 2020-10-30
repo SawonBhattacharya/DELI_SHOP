@@ -6,7 +6,7 @@ using namespace std;
 class Price_List {
 	
 	private: 
-		string prod[6] = {"Roast Beef", "Pastrami", "Salami", "Pickles", "Black Olives", "Green Olives"}; //The string type array
+		string prod[6] = {"Roast Beef", "Pastrami", "Salami\t", "Pickles\t", "Black Olives", "Green Olives"}; //The string type array
 	    double price[6]={10.00, 20.50, 30.20, 54.80, 81.50, 32.0};
 	    map<string, double> pricing; 
 	    
@@ -40,6 +40,7 @@ class Price_List {
 		void print_price() {
 			map<string, double>::iterator i;
 			cout << "Product\t\tPricing" << endl;
+			cout << "-------\t\t-------\n" << endl;
 			for(i = pricing.begin(); i != pricing.end(); ++i) {
 				cout << i->first << "\t" << i->second << endl;
 			}
