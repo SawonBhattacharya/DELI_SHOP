@@ -48,7 +48,7 @@ class Cart {
             }while(c);
             double price = list.get_price(product);
             cart.insert(pair<string, double>(product, scale.getWeight()*price));
-            
+
             scale.zeroWeight();
         }
         //print invoice so far (for packages in the cart in the order they were inserted)
@@ -64,7 +64,7 @@ class Cart {
             this->print_invoice();
             map<string, double>::iterator itr;
             for(itr = cart.begin(); itr != cart.end(); ++itr) {
-                revenue.set_tot_prod((int)itr->second/list.get_price(itr->first));
+                revenue.set_tot_prod(itr->second/list.get_price(itr->first));
                 revenue.set_tot_rev(itr->second);
                 revenue.set_rev_prod(itr->first, itr->second);
             }

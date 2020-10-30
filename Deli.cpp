@@ -15,6 +15,7 @@ private:
 
 public:
     Deli() {
+        cout << "Starting new day!!!" << endl;
         customer_id = 0;
         revenue = Revenue();
     }
@@ -63,19 +64,19 @@ public:
     }
     void check_out_customer() {
         customer.pop();
+        cout << "Thank you customer: "<< customer_id;
         customer_id--;
-        cout<<"Thank you customer no: "<< customer_id+1;
     }
     void report() {
         cout << "Total Products solded: " << revenue.get_tot_prod() << endl;
         cout << "Total Revenue per product" << endl;
+        map<string, double> rev = revenue.get_rev_prod();
         map<string, double>::iterator itr;
-        for(itr = revenue.get_rev_prod().begin(); itr != revenue.get_rev_prod().end(); ++itr) {
+        for(itr = rev.begin(); itr != rev.end(); ++itr) {
             cout << itr->first << "\t\t" << itr->second << endl;
         }
         cout << "Total Revenue for the day: " << revenue.get_tot_rev() << endl;
     }
     ~Deli() {
-        cout << "Ending Day!!!";
     }
 };

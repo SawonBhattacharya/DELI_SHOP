@@ -32,6 +32,7 @@ int main() {
                 break;
             
             case 6:
+                cout << "Ending Day!!!" << endl;
                 deli.~Deli();
                 break;
 
