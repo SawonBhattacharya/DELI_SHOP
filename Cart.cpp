@@ -1,7 +1,7 @@
 #include<iostream>
-#include<iterator>
-#include<map>
 #include<string>
+#include<map>
+#include<iterator>
 #include"Scale.cpp"
 #include"Price_list.cpp"
 
@@ -15,6 +15,11 @@ class Cart {
         string product;
 
     public:
+        Cart() {
+            scale.zeroWeight();
+            cart.clear();
+            product = "";
+        }
         //Select product
         void sel_prod() {
             cout << "Select from the following" <<  endl;
@@ -29,7 +34,7 @@ class Cart {
             cin >> quantity;
             scale.addWeight(quantity);
             cout << "Present quantity" << scale.getWeight() << endl;
-            do{
+            do {
                 cout << "How much do you want to add?";
                 cin >> quantity;
                 scale.addWeight(quantity);
@@ -40,7 +45,6 @@ class Cart {
                 cout << "Want to change again? (1/0)" << endl;
                 cin >> c;
             }while(c);
-
             double price = list.get_price(product);
             cart.insert(pair<string, double>(product, scale.getWeight()*price));
             scale.zeroWeight();
@@ -53,19 +57,15 @@ class Cart {
             }
         }
         //Check out - buy cart content (and print an invoice)
-        void check_out() {
-            cout << "Thank you for visiting us!" << endl;
+        void check_out(Revenue revenue) {
             cout << "INVOICE\nPRODUCT\t\tPRICE" << endl;
             this->print_invoice();
+            map<string, double>::iterator itr;
+            for(itr = cart.begin(); itr != cart.end(); ++itr) {
+                cout << itr->first << "\t\t" << itr->second << endl;
+                revenue.set_tot_prod((int)itr->second/list.get_price(itr->first));
+                revenue.set_tot_rev(itr->second);
+                revenue.set_rev_prod(itr->first, itr->second);
+            }
         }
 };
-
-
-/*int main() {
-    Cart c;
-    c.sel_prod();
-    c.add_to_cart();
-    c.check_out();
-
-    return 0;
-}*/
