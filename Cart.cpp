@@ -31,17 +31,26 @@ class Cart {
         //add to cart
         void add_to_cart() {
             int quantity, c;
+            char c_a,c_s;
             cout << "How much do you want? ";
             cin >> quantity;
             scale.addWeight(quantity);
             cout << "Present quantity: " << scale.getWeight() << endl;
             do {
-                cout << "How much do you want to add? ";
-                cin >> quantity;
-                scale.addWeight(quantity);
-                cout << "How much do you want to subtract? ";
-                cin >> quantity;
-                scale.subtractWeight(quantity);
+                cout<<"Do you want add any weight?(y/n)";
+                cin>>c_a;
+                if(c_a=='y'){
+                    cout << "How much do you want to add? ";
+                    cin >> quantity;
+                    scale.addWeight(quantity);
+                }
+                cout<<"Do you want subtract any weight?(y/n)";
+                cin>>c_s;
+                if(c_s=='y'){
+                    cout << "How much do you want to subtract? ";
+                    cin >> quantity;
+                    scale.subtractWeight(quantity);
+                }
                 cout << "Present quantity: " << scale.getWeight() << endl;
                 cout << "Want to change again? (1/0) ";
                 cin >> c;
@@ -57,13 +66,13 @@ class Cart {
             cout << "PRODUCT\t\tPRICE" << endl;
             cout << "-------\t\t------" << endl;
             for(itr = cart.begin(); itr != cart.end(); ++itr) {
-                cout << itr->first << "\t\t" << itr->second << endl;
+                cout << itr->first << "\t\t" <<scale.getWeight()<< "\t\t" << itr->second << endl;
             }
             cout << "\n";
         }
         //Check out - buy cart content (and print an invoice)
         void check_out(Revenue& revenue) {
-            cout << "INVOICE\nPRODUCT\t\tPRICE" << endl;
+            cout << "INVOICE" << endl;
             this->print_invoice();
             map<string, double>::iterator itr;
             for(itr = cart.begin(); itr != cart.end(); ++itr) {
