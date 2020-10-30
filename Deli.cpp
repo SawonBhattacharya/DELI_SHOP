@@ -77,7 +77,4 @@ public:
         }
         cout << "Total Revenue for the day: " << revenue.get_tot_rev() << endl;
     }
-    ~Deli() {
-        
-    }
 };
