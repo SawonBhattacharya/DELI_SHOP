@@ -37,7 +37,7 @@ int main() {
             
             case 6:
                 cout << "Ending Day!!!" << endl;
-                deli = new  Deli();
+                deli = new Deli();
 
             default:
                 break;
