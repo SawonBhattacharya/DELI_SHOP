@@ -42,14 +42,14 @@ class Cart {
             scale.addWeight(quantity);
             cout << "Present quantity: " << scale.getWeight() << endl;
             do {
-                cout << "Do you want add any weight?(y/n)";
+                cout << "Do you want add any weight?(y/n) ";
                 cin >> c_a;
                 if(c_a == 'y'){
                     cout << "How much do you want to add? ";
                     cin >> quantity;
                     scale.addWeight(quantity);
                 }
-                cout << "Do you want subtract any weight?(y/n)";
+                cout << "Do you want subtract any weight?(y/n) ";
                 cin >> c_s;
                 if(c_s == 'y'){
                     cout << "How much do you want to subtract? ";
@@ -68,7 +68,7 @@ class Cart {
         //print invoice so far (for packages in the cart in the order they were inserted)
         void print_invoice() {
             map<string, double>::iterator itr;
-            cout << "PRODUCT\t\tPRICE" << endl;
+            cout << "PRODUCT\t\tQUANTITY\t\tPRICE" << endl;
             cout << "-------\t\t------" << endl;
             for(itr = cart.begin(); itr != cart.end(); ++itr) {
                 cout << itr->first << "\t\t" << itr->second/list.get_price(itr->first) << "\t\t" << itr->second << endl;
