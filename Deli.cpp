@@ -37,7 +37,7 @@ public:
         cout << "\n";
         Cart cart;
         do {
-            cout << "1. Select Product\n2. Add to cart\n3. Print Invoice\n4. Check Out\n\nEnter choice: ";
+            cout << "\n1. Select Product\n2. Add to cart\n3. Print Invoice\n4. Check Out\n\nEnter choice: ";
             cin >> c;
             switch (c)
             {

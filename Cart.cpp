@@ -43,7 +43,7 @@ class Cart {
                 cin >> quantity;
                 scale.subtractWeight(quantity);
                 cout << "Present quantity: " << scale.getWeight() << endl;
-                cout << "Want to change again? (1/0)";
+                cout << "Want to change again? (1/0) ";
                 cin >> c;
             }while(c);
             double price = list.get_price(product);
