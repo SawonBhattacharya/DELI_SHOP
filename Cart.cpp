@@ -27,7 +27,6 @@ class Cart {
             cout << "\nEnter product name: " << endl;
             cin.ignore();
             getline(cin, product);
-            cout << product << endl;
         }
         //add to cart
         void add_to_cart() {
