@@ -3,6 +3,7 @@
 #include<map>
 #include<iterator>
 #include"Scale.cpp"
+#include"Revenue.cpp"
 #include"Price_list.cpp"
 
 using namespace std;

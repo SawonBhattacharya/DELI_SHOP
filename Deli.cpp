@@ -4,7 +4,6 @@
 #include<iterator>
 #include<queue>
 #include"Cart.cpp"
-#include"Revenue.cpp"
 
 using namespace std;
 class Deli {
@@ -23,41 +22,44 @@ public:
         if(customer.size() < 10) {
             customer_id = (++customer_id)%11;
             customer.push(customer_id);
+            cout << "Customer Has been added!" << endl;
             return;
         }
         cout << "Queue Full!" << endl;
     }
     void select_customer() {
-        int c;
+        int c = 0;
         if(customer.empty()) {
             cout << "Queue Empty!" << endl;
             return;
         }
         cout << "Serving customer: " << customer.front() << endl;
         Cart cart;
-        cout << "1. Select Product\n2. Add to cart\n3. Print Invoice\n4. Check Out\n\nEnter choice: ";
-        cin >> c;
-        switch (c)
-        {
-            case 1:
-                cart.sel_prod();
-                break;
-            
-            case 2:
-                cart.add_to_cart();
-                break;
-            
-            case 3:
-                cart.print_invoice();
-                break;
+        do {
+            cout << "1. Select Product\n2. Add to cart\n3. Print Invoice\n4. Check Out\n\nEnter choice: ";
+            cin >> c;
+            switch (c)
+            {
+                case 1:
+                    cart.sel_prod();
+                    break;
+                
+                case 2:
+                    cart.add_to_cart();
+                    break;
+                
+                case 3:
+                    cart.print_invoice();
+                    break;
 
-            case 4:
-                cart.check_out(revenue);
-                break;
+                case 4:
+                    cart.check_out(revenue);
+                    break;
 
-            default:
-                break;
-        }
+                default:
+                    break;
+            }
+        }while(c != 4);
     }
     void check_out_customer() {
         customer.pop();
