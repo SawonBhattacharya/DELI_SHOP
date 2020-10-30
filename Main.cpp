@@ -20,25 +20,36 @@ int main() {
                 break;
 
             case 2:
-                deli->arrival();
+                if(deli != NULL)
+                    deli->arrival();
+                else
+                    cout << "\nPlease choose NEW DAY" << endl;
                 break;
             
             case 3:
-                deli->select_customer();
+                if(deli != NULL)
+                    deli->select_customer();
+                else
+                    cout << "\nPlease choose NEW DAY" << endl;
                 break;
             
             case 4:
-                deli->check_out_customer();
+                if(deli != NULL)
+                    deli->check_out_customer();
+                else
+                    cout << "\nPlease choose NEW DAY" << endl;
                 break;
             
             case 5:
-                deli->report();
+                if(deli != NULL)
+                    deli->report();
+                else
+                    cout << "\nPlease choose NEW DAY" << endl;
                 break;
             
             case 6:
                 cout << "Ending Day!!!" << endl;
                 deli = NULL;
-                //deli = new Deli();
 
             default:
                 break;
