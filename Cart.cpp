@@ -9,6 +9,7 @@
 using namespace std;
 
 class Cart {
+    
     private:
         Scale scale;
         Price_List list;

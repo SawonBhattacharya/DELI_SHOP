@@ -3,6 +3,7 @@
 using namespace std; 
 
 class Scale {
+	
 	private: 
 		// Initially the user will place a random quantity in the scale
 		double currentQuantity;

@@ -3,6 +3,7 @@
 #include<iterator>
 
 class Revenue {
+    
     private:
         int total_product;
         double total_revenue;

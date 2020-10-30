@@ -5,13 +5,14 @@
 #include<string>
 #include<map>
 #include<iterator>
-#include"Scale.cpp"
-#include"Revenue.cpp"
-#include"Price_list.cpp"
+#include"Scale.hpp"
+#include"Revenue.hpp"
+#include"Price_List.hpp"
 
 using namespace std;
 
 class Cart {
+    
     private:
         Scale scale;
         Price_List list;
