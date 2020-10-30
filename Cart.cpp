@@ -66,7 +66,7 @@ class Cart {
             cout << "PRODUCT\t\tPRICE" << endl;
             cout << "-------\t\t------" << endl;
             for(itr = cart.begin(); itr != cart.end(); ++itr) {
-                cout << itr->first << "\t\t" <<scale.getWeight()<< "\t\t" << itr->second << endl;
+                cout << itr->first << "\t\t" << itr->second/list.get_price(itr->first) << "\t\t" << itr->second << endl;
             }
             cout << "\n";
         }
