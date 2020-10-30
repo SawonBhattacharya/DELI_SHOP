@@ -6,6 +6,12 @@
         "iterator": "cpp",
         "map": "cpp",
         "ostream": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp"
     }
 }

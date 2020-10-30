@@ -7,7 +7,7 @@ class Price_List {
 	
 	private: 
 		string prod[6] = {"Roast Beef", "Pastrami", "Salami", "Pickles", "Black Olives", "Green Olives"}; //The string type array
-	    double price[6]={10.00, 20.50, 30.20, 54.80, 81.50, 32.0};
+	    double price[6] = {10.00, 20.50, 30.20, 54.80, 81.50, 32.0};
 	    map<string, double> pricing; 
 	    
 	public:
@@ -20,19 +20,19 @@ class Price_List {
 		// Set price for a specific product
 		void set_price(string product, double updatedPrice) {
 			map<string, double>::iterator i;
-			for(i = pricing.begin(); i != pricing.end(); ++i) {
-				if(product == i->first) {
-					i->second = updatedPrice;
-				}
+			i = pricing.find(product);
+			if(i != pricing.end()) {
+				i->second = updatedPrice;
+				return;
 			}
+			cout << "Item not found!" << endl;
 		}
 		// Get price for a specific product 
 		double get_price(string product) {
 			map<string, double>::iterator i;
-			for(i = pricing.begin(); i != pricing.end(); ++i) {
-				if(product == i->first) {
-					return i->second;
-				}
+			i = pricing.find(product);
+			if(i != pricing.end()) {
+				return i->second;
 			}
 			return 0.00;
 		}

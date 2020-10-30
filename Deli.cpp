@@ -12,11 +12,13 @@ private:
     queue<int> customer;
     int customer_id;
     Revenue revenue;
+    Price_List list;
 
 public:
     Deli() {
         customer_id = 0;
         revenue = Revenue();
+        list = Price_List();
     }
     void arrival() {
         if(customer.size() < 10) {
@@ -35,7 +37,7 @@ public:
         }
         cout << "Serving customer: " << customer.front() << endl;
         cout << "\n";
-        Cart cart;
+        Cart cart = Cart(list);
         do {
             cout << "\n1. Select Product\n2. Add to cart\n3. Print Invoice\n4. Check Out\n\nEnter choice: ";
             cin >> c;
@@ -61,11 +63,19 @@ public:
                     break;
             }
         }while(c != 4);
-    }
-    void check_out_customer() {
         customer.pop();
-        cout << "Thank you customer: "<< customer_id << "! Please visit again!" << endl;
+        cout << "Thank you customer: " << customer_id << "! Please visit again!" << endl;
         customer_id--;
+    }
+    void update_price() {
+        string product;
+        double price;
+        cout << "Enter item name: ";
+        cin.ignore();
+        getline(cin, product);
+        cout << "Enter new price: ";
+        cin >> price;
+        list.set_price(product, price);
     }
     void report() {
         cout << "Total Products solded: " << revenue.get_tot_prod() << endl;

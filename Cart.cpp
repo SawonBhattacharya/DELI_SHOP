@@ -16,9 +16,10 @@ class Cart {
         string product;
 
     public:
-        Cart() {
+        Cart(Price_List& list) {
             scale.zeroWeight();
             cart.clear();
+            this->list = list;
         }
         //Select product
         void sel_prod() {
@@ -31,22 +32,22 @@ class Cart {
         //add to cart
         void add_to_cart() {
             int quantity, c;
-            char c_a,c_s;
+            char c_a, c_s;
             cout << "How much do you want? ";
             cin >> quantity;
             scale.addWeight(quantity);
             cout << "Present quantity: " << scale.getWeight() << endl;
             do {
-                cout<<"Do you want add any weight?(y/n)";
-                cin>>c_a;
-                if(c_a=='y'){
+                cout << "Do you want add any weight?(y/n)";
+                cin >> c_a;
+                if(c_a == 'y'){
                     cout << "How much do you want to add? ";
                     cin >> quantity;
                     scale.addWeight(quantity);
                 }
-                cout<<"Do you want subtract any weight?(y/n)";
-                cin>>c_s;
-                if(c_s=='y'){
+                cout << "Do you want subtract any weight?(y/n)";
+                cin >> c_s;
+                if(c_s == 'y'){
                     cout << "How much do you want to subtract? ";
                     cin >> quantity;
                     scale.subtractWeight(quantity);
