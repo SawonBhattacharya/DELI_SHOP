@@ -58,8 +58,10 @@ int main() {
                 break;
             
             case 5:
-                if(deli != NULL)
+                if(deli != NULL) {
                     deli->update_price();
+                    cout << "Price Updated Successfully!" << endl;
+                }
                 else
                     cout << "\nPlease choose NEW DAY" << endl;
                 break;

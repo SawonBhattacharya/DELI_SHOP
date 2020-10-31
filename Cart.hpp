@@ -69,7 +69,7 @@ class Cart {
         void print_invoice() {
             map<string, double>::iterator itr;
             cout << "PRODUCT\t\tQUANTITY\t\tPRICE" << endl;
-            cout << "-------\t\t------" << endl;
+            cout << "-------\t\t--------\t\t-----" << endl;
             for(itr = cart.begin(); itr != cart.end(); ++itr) {
                 cout << itr->first << "\t\t" << itr->second/list.get_price(itr->first) << "\t\t" << itr->second << endl;
             }

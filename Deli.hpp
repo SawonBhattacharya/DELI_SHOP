@@ -14,12 +14,14 @@ class Deli {
 private:
     queue<int> customer;
     int customer_id;
+    int customer_id1;
     Revenue revenue;
     Price_List list;
 
 public:
     Deli() {
         customer_id = 0;
+        customer_id1 = 0;
         revenue = Revenue();
         list = Price_List();
     }
@@ -67,7 +69,8 @@ public:
             }
         }while(c != 4);
         customer.pop();
-        cout << "Thank you customer: " << customer_id << "! Please visit again!" << endl;
+        customer_id1++;
+        cout << "Thank you customer: " << customer_id1 << "! Please visit again!" << endl;
         customer_id--;
     }
     void update_price() {
