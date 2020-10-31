@@ -7,6 +7,7 @@
 #include<iterator>
 #include<queue>
 #include"Cart.hpp"
+#include"Scale.hpp"
 
 using namespace std;
 class Deli {
@@ -17,6 +18,7 @@ private:
     int customer_id1;
     Revenue revenue;
     Price_List list;
+    Scale scale;
 
 public:
     Deli() {
@@ -24,6 +26,7 @@ public:
         customer_id1 = 0;
         revenue = Revenue();
         list = Price_List();
+        scale = Scale();
     }
     void arrival() {
         if(customer.size() < 10) {
@@ -44,7 +47,7 @@ public:
         cout << "\n";
         Cart cart = Cart(list);
         do {
-            cout << "\n1. Select Product\n2. Add to cart\n3. Print Invoice\n4. Check Out\n\nEnter choice: ";
+            cout << "\n1. Select Product\n2. Add to cart\n3. Print Invoice\n4. Check Out\n5. Remove from cart\n\nEnter choice: ";
             cin >> c;
             switch (c)
             {
@@ -63,6 +66,10 @@ public:
                 case 4:
                     cart.check_out(revenue);
                     break;
+                    
+                case 5: 
+                	scale.zeroWeight();
+                	break;
 
                 default:
                     break;

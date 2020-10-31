@@ -70,6 +70,8 @@ class Cart {
             map<string, double>::iterator itr;
             cout << "PRODUCT\t\tQUANTITY\t\tPRICE" << endl;
             cout << "-------\t\t--------\t\t-----" << endl;
+            if(cart.begin() == cart.end()) 
+            	cout << "Cart \t is \t empty" << endl;
             for(itr = cart.begin(); itr != cart.end(); ++itr) {
                 cout << itr->first << "\t\t" << itr->second/list.get_price(itr->first) << "\t\t" << itr->second << endl;
             }
@@ -86,6 +88,7 @@ class Cart {
                 revenue.set_rev_prod(itr->first, itr->second);
             }
         }
+        
 };
 
 #endif
