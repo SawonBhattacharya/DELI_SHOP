@@ -47,19 +47,6 @@ Be creative in designing and implementing your program.
    
 ## 2. Develop the program.
 
-Submission date for having an initial typed design is Friday October 30 in the
-beginning of the tutorial. The tutorial will be focused on discussing the design, 
-so no late submissions can be accepted. You can change your design after 
-submission for the development part. Please bring a detailed typed design and
-all the necessary classes h files (each class with its own h file) to the 
-tutorial on Wednesday, November 4th.
+Submission date for having an initial typed design is Friday October 30 in the beginning of the tutorial. The tutorial will be focused on discussing the design, so no late submissions can be accepted. You can change your design after submission for the development part. Please bring a detailed typed design and all the necessary classes h files (each class with its own h file) to the tutorial on Wednesday, November 4th.
 
-Submission date for complete project including a design document specifying
-classes (data structure and operation algorithms), working code for classes
-and a deli program with appropriate user interface is Wednesday November 11, noon.
-The program should work on ugrad1-24 machines. We ask that you demonstrate
-your program there. Submission is accomplished by e-mailing a tar file to 
-amir220@cs.jhu.edu as usual. The tar should not include object files, 
-executables, or core files. Please include all the necessary files for us 
-to build and grade your submission (design, all source files, and a makefile 
-that compiles and builds the project based on the submitted source files).
+Submission date for complete project including a design document specifying classes (data structure and operation algorithms), working code for classes and a deli program with appropriate user interface is Wednesday November 11, noon. The program should work on ugrad1-24 machines. We ask that you demonstrate your program there. Submission is accomplished by e-mailing a tar file to amir220@cs.jhu.edu as usual. The tar should not include object files, executables, or core files. Please include all the necessary files for us to build and grade your submission (design, all source files, and a makefile that compiles and builds the project based on the submitted source files).
