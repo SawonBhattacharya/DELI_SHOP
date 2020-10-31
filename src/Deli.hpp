@@ -68,7 +68,7 @@ public:
                     break;
                     
                 case 5: 
-                	scale.zeroWeight();
+                	scale.delWeight();
                 	break;
 
                 default:
