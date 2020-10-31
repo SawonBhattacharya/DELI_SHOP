@@ -77,6 +77,15 @@ class Cart {
             }
             cout << "\n";
         }
+        //removes the current product fromm cart
+        void remove_prod() {
+            map<string, double>::iterator itr;
+            itr = cart.find(product);
+            if(itr != cart.end()) {
+                cart.erase(product);
+                cout << "Item removed from cart!" << endl;
+            }
+        }
         //Check out - buy cart content (and print an invoice)
         void check_out(Revenue& revenue) {
             cout << "INVOICE" << endl;

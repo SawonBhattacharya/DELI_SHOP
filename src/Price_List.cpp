@@ -45,5 +45,4 @@ class Price_List {
 				cout << i->first << "\t" << i->second << endl;
 			}
 		}
-		
 };
