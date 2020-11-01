@@ -32,38 +32,51 @@ class Cart {
             cout << "\nEnter product name: ";
             cin.ignore();
             getline(cin, product);
+            cout<<product<<" "<<list.get_price(product)<<endl;
+            if(list.get_price(product)==0.0){
+                    cout<<"Try to select from the product list."<<endl;
+            }
+            else{
+                this->add_to_cart();
+            }
         }
         //add to cart
         void add_to_cart() {
             int quantity, c;
             char c_a, c_s;
-            cout << "How much do you want? ";
-            cin >> quantity;
-            scale.addWeight(quantity);
-            cout << "Present quantity: " << scale.getWeight() << endl;
-            do {
-                cout << "Do you want add any weight?(y/n) ";
-                cin >> c_a;
-                if(c_a == 'y'){
-                    cout << "How much do you want to add? ";
-                    cin >> quantity;
-                    scale.addWeight(quantity);
-                }
-                cout << "Do you want subtract any weight?(y/n) ";
-                cin >> c_s;
-                if(c_s == 'y'){
-                    cout << "How much do you want to subtract? ";
-                    cin >> quantity;
-                    scale.subtractWeight(quantity);
-                }
+            if(product==""){
+                cout<<"Select a Product from the list first."<<endl;
+
+            }
+            else{
+                cout << "How much do you want? ";
+                cin >> quantity;
+                scale.addWeight(quantity);
                 cout << "Present quantity: " << scale.getWeight() << endl;
-                cout << "Want to change again? (1/0) ";
-                cin >> c;
-            }while(c);
-            double price = list.get_price(product);
-            cart.insert(pair<string, double>(product, scale.getWeight()*price));
-            cout<<"Your item "<<product<<" is added to the cart."<<endl;
-            this->print_invoice();
+                do {
+                    cout << "Do you want add any weight?(y/n) ";
+                    cin >> c_a;
+                    if(c_a == 'y'){
+                        cout << "How much do you want to add? ";
+                        cin >> quantity;
+                        scale.addWeight(quantity);
+                    }
+                    cout << "Do you want subtract any weight?(y/n) ";
+                    cin >> c_s;
+                    if(c_s == 'y'){
+                        cout << "How much do you want to subtract? ";
+                        cin >> quantity;
+                        scale.subtractWeight(quantity);
+                    }
+                    cout << "Present quantity: " << scale.getWeight() << endl;
+                    cout << "Want to change again? (1/0) ";
+                    cin >> c;
+                }while(c);
+                double price = list.get_price(product);
+                cart.insert(pair<string, double>(product, scale.getWeight()*price));
+                cout<<"Your item "<<product<<" is added to the cart."<<endl;
+                this->print_invoice();
+            }
             scale.zeroWeight();
         }
         //print invoice so far (for packages in the cart in the order they were inserted)

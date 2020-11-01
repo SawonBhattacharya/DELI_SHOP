@@ -5,7 +5,8 @@
 * Authors: Souvik Ghosh, Sawon Bhattacharya & Rajarsi Saha                      *
 * Date of creation: 29th October, 2020                                          *
 * Date of last modification: 31st October, 2020                                 *
-*                                                                               *
+* cart empty printing sequence
+* show cart details after adding prod successfully                                                                              *
 ********************************************************************************/
 
 #include<iostream>
@@ -35,14 +36,14 @@ int main() {
                 else
                     cout << "\nPlease choose NEW DAY" << endl;
                 break;
-            
+
             case 3:
                 if(deli != NULL)
                     deli->select_customer();
                 else
                     cout << "\nPlease choose NEW DAY" << endl;
                 break;
-            
+
             /*case 4:
                 if(deli != NULL)
                     deli->check_out_customer();
@@ -56,7 +57,7 @@ int main() {
                 else
                     cout << "\nPlease choose NEW DAY" << endl;
                 break;
-            
+
             case 5:
                 if(deli != NULL) {
                     deli->update_price();
@@ -65,28 +66,28 @@ int main() {
                 else
                     cout << "\nPlease choose NEW DAY" << endl;
                 break;
-            
+
             case 6:
                 cout << "Ending Day!!!" << endl;
                 deli = NULL;
-                
-            case 7: 
+
+            case 7:
             	if(deli != NULL) {
             		deli->addItem();
             		cout << "New item added Successfully!" << endl;
-				} 
+				}
 				else
 					cout << "\nPlease choose NEW DAY" << endl;
 				break;
-				
-			case 8: 
-				if(deli != NULL) 
-					deli->priceList(); 
-				else 
+
+			case 8:
+				if(deli != NULL)
+					deli->priceList();
+				else
 					cout << "\nPlease choose NEW DAY" << endl;
 				break;
-				
-			case 9: 
+
+			case 9:
 				if(deli != NULL) {
 					deli->removeItem();
 					cout << "Item removed Successfully!" << endl;
