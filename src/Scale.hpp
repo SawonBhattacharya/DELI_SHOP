@@ -29,7 +29,8 @@ class Scale {
 			currentQuantity -= quantity; 
 		}
 		void zeroWeight() {
-			currentQuantity = 0;
+//			cout << "Item removed from cart!" << endl;
+			this->currentQuantity = 0;
 		}
 };
 

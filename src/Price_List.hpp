@@ -37,6 +37,7 @@ class Price_List {
 			if(i != pricing.end()) {
 				return i->second;
 			}
+			cout << "Item not found!" << endl;
 			return 0.00;
 		}
 		// Print price list of all products
@@ -48,6 +49,22 @@ class Price_List {
 				cout << i->first << "\t" << i->second << endl;
 			}
 		}
+		
+		void add_item(string product, double price) {
+			pricing.insert(pair<string, double>(product, price));
+		}
+		
+		void delete_item(string product) {
+			map<string, double>::iterator i;
+			for(i = pricing.begin(); i != pricing.end(); ++i) {
+				if(i->first == product) {
+					pricing.erase(i);
+					return;
+				}
+			}
+			cout << "Item not found!" << endl;
+		}
+		
 };
 
 #endif

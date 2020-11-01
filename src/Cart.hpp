@@ -68,23 +68,14 @@ class Cart {
         //print invoice so far (for packages in the cart in the order they were inserted)
         void print_invoice() {
             map<string, double>::iterator itr;
-            cout << "PRODUCT\t\tQUANTITY\tRATE\t\tPRICE" << endl;
-            cout << "-------\t\t--------\t----\t\t-----" << endl;
+            cout << "PRODUCT\t\tQUANTITY\t\tPRICE" << endl;
+            cout << "-------\t\t--------\t\t-----" << endl;
             if(cart.begin() == cart.end()) 
             	cout << "Cart \t is \t empty" << endl;
             for(itr = cart.begin(); itr != cart.end(); ++itr) {
-                cout << itr->first << "\t    " << itr->second/list.get_price(itr->first) << "\t\t" << list.get_price(itr->first) << "\t\t" << itr->second << endl;
+                cout << itr->first << "\t\t" << itr->second/list.get_price(itr->first) << "\t\t" << itr->second << endl;
             }
             cout << "\n";
-        }
-        //removes the current product fromm cart
-        void remove_prod() {
-            map<string, double>::iterator itr;
-            itr = cart.find(product);
-            if(itr != cart.end()) {
-                cart.erase(product);
-                cout << "Item removed from cart!" << endl;
-            }
         }
         //Check out - buy cart content (and print an invoice)
         void check_out(Revenue& revenue) {

@@ -18,7 +18,7 @@ int main() {
     Deli *deli = new Deli();
     do {
     	cout << "---------------------------------" << endl;
-        cout << "|\tDELI SHOP\t\t|\n|\t1. New Day\t\t|\n|\t2. New Customer\t\t|\n|\t3. Serve Customer\t|\n|\t4. Report\t\t|\n|\t5. Update Price List\t|\n|\t6. End Day\t\t|\n|\t0. EXIT PROGRAM\t\t|" << endl;
+        cout << "|\tDELI SHOP\t\t|\n|\t1. New Day\t\t|\n|\t2. New Customer\t\t|\n|\t3. Serve Customer\t|\n|\t4. Report\t\t|\n|\t5. Update Price List\t|\n|\t6. End Day\t\t|\n|\t7. Add Item\t\t|\n|\t8. Print List\t\t|\n|\t9. Remove Item\t\t|\n|\t0. EXIT PROGRAM\t\t|" << endl;
         cout << "---------------------------------" << endl;
         cout << "Enter choice: ";
         cin >> choice;
@@ -69,6 +69,31 @@ int main() {
             case 6:
                 cout << "Ending Day!!!" << endl;
                 deli = NULL;
+                
+            case 7: 
+            	if(deli != NULL) {
+            		deli->addItem();
+            		cout << "New item added Successfully!" << endl;
+				} 
+				else
+					cout << "\nPlease choose NEW DAY" << endl;
+				break;
+				
+			case 8: 
+				if(deli != NULL) 
+					deli->priceList(); 
+				else 
+					cout << "\nPlease choose NEW DAY" << endl;
+				break;
+				
+			case 9: 
+				if(deli != NULL) {
+					deli->removeItem();
+					cout << "Item removed Successfully!" << endl;
+				}
+				else
+					cout << "\nPlease choose NEW DAY" << endl;
+				break;
 
             default:
                 break;
