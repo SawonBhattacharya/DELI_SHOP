@@ -12,7 +12,7 @@
 using namespace std;
 
 class Cart {
-    
+
     private:
         Scale scale;
         Price_List list;
@@ -62,24 +62,29 @@ class Cart {
             }while(c);
             double price = list.get_price(product);
             cart.insert(pair<string, double>(product, scale.getWeight()*price));
-
+            cout<<"Your item "<<product<<" is added to the cart."<<endl;
+            this->print_invoice();
             scale.zeroWeight();
         }
         //print invoice so far (for packages in the cart in the order they were inserted)
         void print_invoice() {
             map<string, double>::iterator itr;
-            cout << "PRODUCT\t\tQUANTITY\t\tPRICE" << endl;
-            cout << "-------\t\t--------\t\t-----" << endl;
-            if(cart.begin() == cart.end()) 
-            	cout << "Cart \t is \t empty" << endl;
-            for(itr = cart.begin(); itr != cart.end(); ++itr) {
-                cout << itr->first << "\t\t" << itr->second/list.get_price(itr->first) << "\t\t" << itr->second << endl;
+
+            if(cart.begin() == cart.end())
+            	cout << "Oops!!!\t Cart \t is \t empty" << endl;
+            else{
+                cout << "INVOICE" << endl;
+                cout << "PRODUCT\t\tQUANTITY\t\tPRICE" << endl;
+                cout << "-------\t\t--------\t\t-----" << endl;
+                for(itr = cart.begin(); itr != cart.end(); ++itr) {
+                    cout << itr->first << "\t\t" << itr->second/list.get_price(itr->first) << "\t\t" << itr->second << endl;
+                }
+                cout << "\n";
             }
-            cout << "\n";
         }
         //Check out - buy cart content (and print an invoice)
         void check_out(Revenue& revenue) {
-            cout << "INVOICE" << endl;
+
             this->print_invoice();
             map<string, double>::iterator itr;
             for(itr = cart.begin(); itr != cart.end(); ++itr) {
@@ -88,7 +93,7 @@ class Cart {
                 revenue.set_rev_prod(itr->first, itr->second);
             }
         }
-        
+
 };
 
 #endif

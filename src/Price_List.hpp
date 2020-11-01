@@ -7,12 +7,12 @@
 using namespace std;
 
 class Price_List {
-	
-	private: 
+
+	private:
 		string prod[6] = {"Roast Beef", "Pastrami", "Salami", "Pickles", "Black Olives", "Green Olives"}; //The string type array
 	    double price[6] = {10.00, 20.50, 30.20, 54.80, 81.50, 32.0};
-	    map<string, double> pricing; 
-	    
+	    map<string, double> pricing;
+
 	public:
 		// Assignes default values to the map
 		Price_List() {
@@ -28,16 +28,16 @@ class Price_List {
 				i->second = updatedPrice;
 				return;
 			}
-			cout << "Item not found!" << endl;
+			cout << "Item is not there in the shop's list so can't update the price sorry." << endl;
 		}
-		// Get price for a specific product 
+		// Get price for a specific product
 		double get_price(string product) {
 			map<string, double>::iterator i;
 			i = pricing.find(product);
 			if(i != pricing.end()) {
 				return i->second;
 			}
-			cout << "Item not found!" << endl;
+			cout << "Item not found in the list!" << endl;
 			return 0.00;
 		}
 		// Print price list of all products
@@ -49,11 +49,11 @@ class Price_List {
 				cout << i->first << "\t" << i->second << endl;
 			}
 		}
-		
+
 		void add_item(string product, double price) {
 			pricing.insert(pair<string, double>(product, price));
 		}
-		
+
 		void delete_item(string product) {
 			map<string, double>::iterator i;
 			for(i = pricing.begin(); i != pricing.end(); ++i) {
@@ -64,7 +64,7 @@ class Price_List {
 			}
 			cout << "Item not found!" << endl;
 		}
-		
+
 };
 
 #endif
