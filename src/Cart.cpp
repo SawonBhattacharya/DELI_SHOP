@@ -24,6 +24,7 @@ class Cart {
         }
         //Select product
         void sel_prod() {
+            cin.ignore();
             do {
                 cout << "Select from the following: " <<  endl;
                 list.print_price();

@@ -43,8 +43,8 @@ class Price_List {
 		// Print price list of all products
 		void print_price() {
 			map<string, double>::iterator i;
-			cout << "\nProduct\t\tPricing" << endl;
-			cout << "-------\t\t-------" << endl;
+			cout << "\nProduct\t\tPricing (Rs)" << endl;
+			cout << "-------\t\t------------" << endl;
 			for(i = pricing.begin(); i != pricing.end(); ++i) {
 				if(i->first.length() >= 8) {
 					cout << i->first << "\t";
@@ -52,7 +52,7 @@ class Price_List {
 				else {
 					cout << i->first << "\t\t";
 				}
-				printf("Rs.%.2f\n", i->second);
+				printf("%.2f\n", i->second);
 			}
 		}
 		// For adding items to price list
