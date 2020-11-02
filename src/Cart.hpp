@@ -27,15 +27,12 @@ class Cart {
         }
         //Select product
         void sel_prod() {
-            double price;
             do {
                 cout << "Select from the following: " <<  endl;
                 list.print_price();
                 cout << "\nEnter product name: ";
-                cin.ignore();
                 getline(cin, product);
-                price = list.get_price(product);
-                if(price > 0.0) {
+                if(list.get_price(product) > 0.0) {
                     cout << product << " ";
                     printf("Rs.%.2f\n", list.get_price(product));
                     break;
@@ -76,8 +73,14 @@ class Cart {
                     cout << "Want to change again? (1/0) ";
                     cin >> c;
                 }while(c);
-                double price = list.get_price(product);
-                cart.insert(pair<string, double>(product, scale.getWeight()*price));
+                map<string, double>::iterator itr;
+                itr = cart.find(product);
+                if(itr != cart.end()) {
+                    itr->second = itr->second + (scale.getWeight()*list.get_price(product));
+                }
+                else {
+                    cart.insert(pair<string, double>(product, scale.getWeight()*list.get_price(product)));
+                }
                 cout << "Your item " << product << " has been added to the cart." << endl;
                 product = "";
             }

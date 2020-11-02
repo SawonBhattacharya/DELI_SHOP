@@ -21,6 +21,7 @@ int main() {
         cout << "---------------------------------" << endl;
         cout << "Enter choice: ";
         cin >> choice;
+        cin.ignore();
         switch (choice)
         {
             case 1:
