@@ -1,0 +1,3 @@
+C:/Users/RAJARSI/Documents/GitHub/DELI_SHOP/src/Build-win32/CMakeFiles/DELI_SHOP.dir
+C:/Users/RAJARSI/Documents/GitHub/DELI_SHOP/src/Build-win32/CMakeFiles/ALL_BUILD.dir
+C:/Users/RAJARSI/Documents/GitHub/DELI_SHOP/src/Build-win32/CMakeFiles/ZERO_CHECK.dir

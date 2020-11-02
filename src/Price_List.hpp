@@ -10,7 +10,7 @@ class Price_List {
 
 	private:
 		string prod[6] = {"Roast Beef", "Pastrami", "Salami", "Pickles", "Black Olives", "Green Olives"}; //The string type array
-	    double price[6] = {10.00, 20.50, 30.20, 54.80, 81.50, 32.0};
+	    double price[6] = {10.00, 20.50, 30.20, 54.80, 81.50, 32.00};
 	    map<string, double> pricing;
 
 	public:
@@ -43,28 +43,38 @@ class Price_List {
 		// Print price list of all products
 		void print_price() {
 			map<string, double>::iterator i;
-			cout << "Product\t\tPricing" << endl;
-			cout << "-------\t\t-------\n" << endl;
+			cout << "\nProduct\t\tPricing" << endl;
+			cout << "-------\t\t-------" << endl;
 			for(i = pricing.begin(); i != pricing.end(); ++i) {
-				cout << i->first << "\t" << i->second << endl;
+				if(i->first.length() >= 8) {
+					cout << i->first << "\t";
+				}
+				else {
+					cout << i->first << "\t\t";
+				}
+				printf("Rs.%.2f\n", i->second);
 			}
 		}
-
+		// For adding items to price list
 		void add_item(string product, double price) {
 			pricing.insert(pair<string, double>(product, price));
+			cout << "Item added successfully!" << endl;
+			cout << "NEW LIST" << endl;
+			print_price();
 		}
-
+		// For deleting items from price list
 		void delete_item(string product) {
 			map<string, double>::iterator i;
-			for(i = pricing.begin(); i != pricing.end(); ++i) {
-				if(i->first == product) {
-					pricing.erase(i);
-					return;
-				}
+			i = pricing.find(product);
+			if(i != pricing.end()) {
+				pricing.erase(product);
+				cout << "Item deleted successfully!" << endl;
+				cout << "NEW LIST" << endl;
+				print_price();
+				return;
 			}
 			cout << "Item not found!" << endl;
 		}
-
 };
 
 #endif

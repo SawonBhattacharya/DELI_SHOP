@@ -4,6 +4,7 @@
 #include<iterator>
 #include<queue>
 #include"Cart.cpp"
+#include"Scale.cpp"
 
 using namespace std;
 
@@ -41,12 +42,11 @@ class Deli {
                 return;
             }
             cout << "Serving customer: " << customer.front() << endl;
-            cout << "\n";
             Cart cart = Cart(list);
             do {
-                cout << "\n1. Select Product\n2. Add to cart\n3. Print Invoice\n4. Check Out\n5. Remove from cart\n\nEnter choice: ";
+                cout << "\n1. Select Product\n2. Add to cart\n3. View Cart\n4. Check Out\n5. Remove from cart\n\nEnter choice: ";
                 cin >> c;
-                switch (c)
+                switch(c)
                 {
                     case 1:
                         cart.sel_prod();
@@ -57,6 +57,7 @@ class Deli {
                         break;
                     
                     case 3:
+                        cout << "YOUR CART" << endl;
                         cart.print_invoice();
                         break;
 
@@ -80,6 +81,13 @@ class Deli {
         void update_price() {
             string product;
             double price;
+            char c;
+            cout << "PRICE UPDATING SECTION" << endl;
+            cout << "Enter q/Q to leave or anything else to continue: ";
+            cin >> c;
+            if(c == 'q' || c == 'Q') {
+                return;
+            }
             cout << "Enter item name: ";
             cin.ignore();
             getline(cin, product);
@@ -88,13 +96,43 @@ class Deli {
             list.set_price(product, price);
         }
         void report() {
-            cout << "Total Products solded: " << revenue.get_tot_prod() << endl;
-            cout << "Total Revenue per product: " << revenue.get_tot_rev() << endl;
+            cout << "Total Products sold: " << revenue.get_tot_prod() << endl;
+            cout << "Total Revenue per product: ";
+            printf("Rs.%.2f", revenue.get_tot_rev());
+            cout << endl;
             map<string, double> rev = revenue.get_rev_prod();
             map<string, double>::iterator itr;
             for(itr = rev.begin(); itr != rev.end(); ++itr) {
-                cout << itr->first << "\t\t" << itr->second << endl;
+                if(itr->first.length() >= 8) {
+                    cout << itr->first << "\t";
+                }
+                else {
+                    cout << itr->first << "\t\t";
+                }
+                printf("Rs.%.2f\n", itr->second);
             }
-            cout << "Total Revenue for the day: " << revenue.get_tot_rev() << endl;
+            cout << "Total Revenue for the day: ";
+            printf("Rs.%.2f\n", revenue.get_tot_rev());
+        }
+        void addItem() {
+            string product;
+            double price;
+            cout << "Enter new item name: ";
+            cin.ignore();
+            getline(cin, product);
+            cout << "Enter its price: ";
+            cin >> price;
+            list.add_item(product, price);
+        }
+        void removeItem() {
+            string product;
+            double price;
+            cout << "Enter new item name: ";
+            cin.ignore();
+            getline(cin, product);
+            list.delete_item(product);
+        }
+        void priceList() {
+            list.print_price();
         }
 };

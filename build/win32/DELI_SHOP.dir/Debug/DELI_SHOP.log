@@ -1,0 +1,9 @@
+﻿  Building Custom Rule C:/Users/RAJARSI/Documents/GitHub/DELI_SHOP/src/CMakeLists.txt
+  Main.cpp
+c:\users\rajarsi\documents\github\deli_shop\src\Cart.hpp(134): warning C4244: 'argument': conversion from '_Ty2' to 'int', possible loss of data
+          with
+          [
+              _Ty2=double
+          ]
+c:\users\rajarsi\documents\github\deli_shop\src\Deli.hpp(132): warning C4101: 'price': unreferenced local variable
+  DELI_SHOP.vcxproj -> C:\Users\RAJARSI\Documents\GitHub\DELI_SHOP\src\Build-win32\Debug\DELI_SHOP.exe
