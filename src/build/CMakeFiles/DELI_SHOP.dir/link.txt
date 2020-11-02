@@ -1,0 +1,3 @@
+C:\CMake\bin\cmake.exe -E rm -f CMakeFiles\DELI_SHOP.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\DELI_SHOP.dir/objects.a @CMakeFiles\DELI_SHOP.dir\objects1.rsp
+C:\MinGW\bin\mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles\DELI_SHOP.dir/objects.a -Wl,--no-whole-archive -o DELI_SHOP.exe -Wl,--out-implib,libDELI_SHOP.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\DELI_SHOP.dir\linklibs.rsp
